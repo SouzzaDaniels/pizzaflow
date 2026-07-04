@@ -1,0 +1,25 @@
+# ---------- .NET ----------
+backend/**/bin/
+backend/**/obj/
+backend/**/*.user
+
+# ---------- Node / Angular ----------
+frontend/node_modules/
+frontend/dist/
+frontend/.angular/
+npm-debug.log*
+
+# ---------- Flutter ----------
+mobile/**/build/
+mobile/**/.dart_tool/
+mobile/**/.packages
+mobile/**/*.iml
+mobile/**/.flutter-plugins
+mobile/**/.flutter-plugins-dependencies
+
+# ---------- Geral ----------
+.env
+.DS_Store
+*.log
+.vscode/
+.idea/
