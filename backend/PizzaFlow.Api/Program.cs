@@ -14,7 +14,7 @@ var port = Environment.GetEnvironmentVariable("PORT") ?? "8080";
 builder.WebHost.UseUrls($"http://*:{port}");
 
 // ----- Banco de dados (Supabase / PostgreSQL) -----
-var connectionString = builder.Configuration.GetConnectionString("DefaultConnection")
+var connectionString = builder.Configuration.GetConnectionString("ConnectionStrings__DefaultConnection")
     ?? throw new InvalidOperationException("Connection string não configurada.");
 
 builder.Services.AddDbContext<AppDbContext>(options =>

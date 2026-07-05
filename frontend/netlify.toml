@@ -1,9 +1,8 @@
 [build]
   base = "frontend"
-  command = "npm install && npm run build -- --configuration production"
-  publish = "dist/pizzaflow-frontend/browser"
+  command = "npm install --legacy-peer-deps && npm run build -- --configuration production"
+  publish = "frontend/dist/pizzaflow-frontend/browser"
 
-# Redireciona todas as rotas para o index.html (necessário para o roteador do Angular)
 [[redirects]]
   from = "/*"
   to = "/index.html"
