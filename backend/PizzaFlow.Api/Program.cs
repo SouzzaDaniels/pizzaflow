@@ -30,7 +30,7 @@ builder.Services.AddScoped<IUsuarioRepository, UsuarioRepository>();
 builder.Services.AddScoped<IPedidoRepository, PedidoRepository>();
 
 // ----- AutoMapper -----
-builder.Services.AddAutoMapper(typeof(MappingProfile));
+builder.Services.AddAutoMapper(typeof(Program).Assembly);
 
 // ----- JWT -----
 builder.Services.AddScoped<IJwtService, JwtService>();
