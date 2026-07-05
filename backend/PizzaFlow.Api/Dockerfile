@@ -13,6 +13,8 @@ FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS final
 WORKDIR /app
 COPY --from=build /app/publish .
 
+ENV DOTNET_GCHeapHardLimitPercent=20
+
 # O Render define a variável PORT dinamicamente em tempo de execução;
 # o Program.cs lê essa variável para configurar a URL do Kestrel.
 EXPOSE 8080

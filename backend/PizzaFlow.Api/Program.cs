@@ -10,12 +10,8 @@ using PizzaFlow.Api.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// O Render injeta a porta a ser usada na variável de ambiente PORT.
-var porta = Environment.GetEnvironmentVariable("PORT");
-if (!string.IsNullOrEmpty(porta))
-{
-    builder.WebHost.UseUrls($"http://+:{porta}");
-}
+var port = Environment.GetEnvironmentVariable("PORT") ?? "8080";
+builder.WebHost.UseUrls($"http://*:{port}");
 
 // ----- Banco de dados (Supabase / PostgreSQL) -----
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection")
