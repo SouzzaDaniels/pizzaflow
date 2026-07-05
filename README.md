@@ -2,8 +2,6 @@
 
 Plataforma de pedidos para pizzarias — cliente web (Angular) + API (.NET 8) + app do gestor (Flutter).
 
-**Comece pelo arquivo [`TUTORIAL.md`](./TUTORIAL.md)** — ele contém o passo a passo completo, do zero até o projeto rodando na internet e publicado no seu GitHub.
-
 ## Estrutura do repositório
 
 ```
