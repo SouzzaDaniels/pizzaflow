@@ -80,17 +80,17 @@ builder.Services.AddSwaggerGen(options =>
     });
 });
 
-// ----- CORS (necessário para o Angular no Netlify acessar a API no Render) -----
-var corsOrigins = builder.Configuration.GetSection("Cors:AllowedOrigins").Get<string[]>()
-    ?? new[] { "http://localhost:4200" };
 
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("PizzaFlowCors", policy =>
     {
-        policy.WithOrigins(corsOrigins)
-              .AllowAnyHeader()
-              .AllowAnyMethod();
+        policy.WithOrigins(
+            "https://pizzaflow-api-gsf9.onrender.com", 
+            "https://pizzaflowd-dan.netlify.app"                
+        )
+        .AllowAnyHeader()
+        .AllowAnyMethod();
     });
 });
 
