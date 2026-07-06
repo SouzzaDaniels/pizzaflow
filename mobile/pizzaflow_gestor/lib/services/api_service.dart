@@ -6,7 +6,7 @@ import '../models/pedido.dart';
 class ApiService {
   // Troque pelo endereço do backend publicado no Render antes de gerar o APK final.
   // Em testes locais com emulador Android, use 10.0.2.2 no lugar de localhost.
-  static const String baseUrl = 'https://pizzaflow-api.onrender.com/api';
+  static const String baseUrl = 'https://pizzaflow-api-gsf9.onrender.com/api';
 
   Future<String?> _getToken() async {
     final prefs = await SharedPreferences.getInstance();
