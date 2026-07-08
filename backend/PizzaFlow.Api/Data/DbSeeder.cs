@@ -26,7 +26,7 @@ public static class DbSeeder
             context.Usuarios.Add(new Usuario
             {
                 NomeCompleto = "Gestor PizzaFlow",
-                Telefone = "11999999999",
+                Telefone = "11997645021",
                 SenhaHash = BCrypt.Net.BCrypt.HashPassword("admin123"),
                 TipoUsuario = TipoUsuario.Gestor,
                 DataCadastro = DateTime.UtcNow
