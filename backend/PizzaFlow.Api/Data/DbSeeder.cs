@@ -19,14 +19,13 @@ public static class DbSeeder
             );
         }
 
-        // Gestor padrão, inserido manualmente conforme escopo do MVP.
-        // Troque telefone/senha antes de subir para produção!
+
         if (!context.Usuarios.Any(u => u.TipoUsuario == TipoUsuario.Gestor))
         {
             context.Usuarios.Add(new Usuario
             {
                 NomeCompleto = "Gestor PizzaFlow",
-                Telefone = "11997645021",
+                Telefone = "16997645021",
                 SenhaHash = BCrypt.Net.BCrypt.HashPassword("admin123"),
                 TipoUsuario = TipoUsuario.Gestor,
                 DataCadastro = DateTime.UtcNow
