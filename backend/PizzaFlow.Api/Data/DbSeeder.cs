@@ -26,10 +26,20 @@ public static class DbSeeder
             {
                 NomeCompleto = "Gestor PizzaFlow",
                 Telefone = "16997645021",
-                SenhaHash = BCrypt.Net.BCrypt.HashPassword("admin123"),
+                SenhaHash = BCrypt.Net.BCrypt.HashPassword("Admin123"),
                 TipoUsuario = TipoUsuario.Gestor,
                 DataCadastro = DateTime.UtcNow
             });
+        }
+        else
+        {
+            // Atualiza senha se o usuário já existe
+            var gestor = context.Usuarios.FirstOrDefault(u => u.TipoUsuario == TipoUsuario.Gestor);
+            if (gestor != null)
+            {
+                gestor.SenhaHash = BCrypt.Net.BCrypt.HashPassword("Admin123");
+                gestor.Telefone = "16997645021";   // atualiza telefone também
+            }
         }
 
         context.SaveChanges();
