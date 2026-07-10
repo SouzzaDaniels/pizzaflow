@@ -34,7 +34,7 @@ builder.Services.AddScoped<IJwtService, JwtService>();
 var jwtKey = builder.Configuration["Jwt:Key"]
     ?? throw new InvalidOperationException("Jwt:Key não configurada.");
 var jwtIssuer = builder.Configuration["Jwt:Issuer"] ?? "PizzaFlow";
-var jwtAudience = builder.Configuration["Jwt:Audience"] ?? "PizzaFlowClientes";
+var jwtAudience = builder.Configuration["Jwt:Audience"] ?? "PizzaFlow";
 
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
     .AddJwtBearer(options =>

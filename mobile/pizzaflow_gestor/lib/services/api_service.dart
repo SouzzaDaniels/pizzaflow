@@ -56,8 +56,8 @@ class ApiService {
   /// Busca a fila de pedidos ativos (usado no ciclo de long polling a cada 15s).
   Future<List<Pedido>> buscarFilaDePedidos() async {
     final headers = await _headersAutenticados();
-    final resposta =
-        await http.get(Uri.parse('$baseUrl/admin/pedidos'), headers: headers);
+    final resposta = await http.get(Uri.parse('$baseUrl/api/admin/pedidos'),
+        headers: headers);
 
     if (resposta.statusCode != 200) {
       throw Exception('Falha ao buscar pedidos (${resposta.statusCode})');
@@ -70,7 +70,7 @@ class ApiService {
   Future<void> atualizarStatus(int pedidoId, String novoStatus) async {
     final headers = await _headersAutenticados();
     final resposta = await http.put(
-      Uri.parse('$baseUrl/admin/pedidos/$pedidoId/status'),
+      Uri.parse('$baseUrl/api/admin/pedidos/$pedidoId/status'),
       headers: headers,
       body: jsonEncode({'status': novoStatus}),
     );
