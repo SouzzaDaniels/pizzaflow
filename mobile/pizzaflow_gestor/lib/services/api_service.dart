@@ -24,11 +24,18 @@ class ApiService {
   }
 
   Future<bool> login(String telefone, String senha) async {
-    final resposta = await http.post(
-      Uri.parse('$baseUrl/auth/login'),
-      headers: {'Content-Type': 'application/json'},
-      body: jsonEncode({'telefone': telefone, 'senha': senha}),
-    );
+    print("Tentando login com telefone: '$telefone' | senha: '$senha'");
+
+    final resposta = await http
+        .post(
+          Uri.parse('$baseUrl/api/auth/login'),
+          headers: {'Content-Type': 'application/json'},
+          body: jsonEncode({'telefone': telefone, 'senha': senha}),
+        )
+        .timeout(const Duration(seconds: 10));
+
+    print("Status Code: ${resposta.statusCode}");
+    print("Resposta: ${resposta.body}");
 
     if (resposta.statusCode == 200) {
       final dados = jsonDecode(resposta.body);
