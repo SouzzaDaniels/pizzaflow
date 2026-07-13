@@ -69,6 +69,7 @@ class ApiService {
 
   Future<void> atualizarStatus(int pedidoId, String novoStatus) async {
     final headers = await _headersAutenticados();
+
     final resposta = await http.put(
       Uri.parse('$baseUrl/api/admin/pedidos/$pedidoId/status'),
       headers: headers,
