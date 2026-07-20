@@ -4,8 +4,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import '../models/pedido.dart';
 
 class ApiService {
-  // Troque pelo endereço do backend publicado no Render antes de gerar o APK final.
-  // Em testes locais com emulador Android, use 10.0.2.2 no lugar de localhost.
+
   static const String baseUrl = 'https://pizzaflow-api-gsf9.onrender.com';
 
   Future<String?> _getToken() async {
@@ -53,7 +52,7 @@ class ApiService {
     };
   }
 
-  /// Busca a fila de pedidos ativos (usado no ciclo de long polling a cada 15s).
+  /// Chamado periodicamente pelo aplicativo a cada 15 segundos.
   Future<List<Pedido>> buscarFilaDePedidos() async {
     final headers = await _headersAutenticados();
     final resposta = await http.get(Uri.parse('$baseUrl/api/admin/pedidos'),
