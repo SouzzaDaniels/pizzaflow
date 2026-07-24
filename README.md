@@ -9,7 +9,6 @@ pizzaflow/
 ├── backend/    → API REST em .NET 8 (PostgreSQL/Supabase, JWT, EF Core)
 ├── frontend/   → Aplicação web em Angular 20 (cliente da pizzaria)
 ├── mobile/     → App Flutter do gestor (fila de pedidos, status)
-└── TUTORIAL.md → passo a passo completo (comece aqui)
 ```
 
 ## Stack
